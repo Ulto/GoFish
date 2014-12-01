@@ -1,0 +1,55 @@
+
+Strategy
+
+If your assignment is to design and implement a "strategy", the program will call your new function and you must return a card number.
+
+    int Strategy(int player)
+    {
+        return(card)
+    }
+
+The input to your function is:   int player   which can have the value of 0 or 1
+
+And you must return a number (cards are numbered 1-13 for A,2,...,10,J,Q,K) that follows the Go-Fish rules.
+
+Your strategy will need to get integrated in with strategies from other students, so you must follow a series of coding "standards".
+
+First, please include the following header files:
+
+    #include <stdio.h>
+    #include <string.h>
+    #include <stdlib.h>
+    #include <conio.h>
+
+    #include "gofish.h"
+    #include "extern.h"
+
+
+Inside the file: gofish.h, you will see the data structures and a #define that identifies the range of card numbers:
+
+    #define MINNUMB   1 
+    #define MAXNUMB  13
+
+ 
+
+Inside the file: extern.h, you will see the global variables.
+There are three that might be of value to your strategy:
+
+    info[player].lastcard	// the number of the last card you requested
+
+    info[player].lastpick       // the number of the card you picked up from the deck
+
+    info[1-player].lastcard     // the number of the last card your opponent asked for
+
+
+And you might also need to one function call in your strategy function:
+
+    TotalNumberOfCards(player,card)
+ // returns 0-3 as per the number of cards you have in your hand
+
+(And no peaking at the other players hand)
+
+If you need a static variable, you must remember that your function can be entered with player=0 or player=1
+and you must separate information from between the two players.
+
+
