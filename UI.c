@@ -27,7 +27,42 @@
 
 void User_Intr(void)
 {
-    // .. put user interface code here ...
+	int selectStrat;
+
+	printf("Welcome!\n");
+
+	/* Make sure the user puts in a name less than 41 chars */
+	do
+	{
+		printf("Please enter a name for Player 1 (Less than 40 characters): ");
+
+	}while (fgets(info[0].name, 40, stdin) == NULL);
+
+	/* Now let user select strategy. This will repeat until a valid strategy is chosen */
+	do{
+		printf("Please select the strategy for Player 1 from 0 - 4: ");
+		selectStrat = getch();
+		selectStrat -= '0';
+
+	} while (selectStrat < 0 || selectStrat > 4);
+	
+	info[0].strategy = selectStrat;
+
+	/* Make sure the user puts in a name less than 41 chars */
+	do{
+		printf("\nPlease enter a name for Player 2 (Less than 40 characters): ");
+	}while (fgets(info[1].name, 40, stdin) == NULL);
+
+	/* Now let user select strategy. This will repeat until a valid strategy is chosen */
+	do{
+		printf("Please select the strategy for Player 2 from 0 - 4: ");
+		selectStrat = getch();
+		selectStrat -= '0';
+
+	} while (selectStrat < 0 || selectStrat > 4);
+
+	info[1].strategy = selectStrat;
+
 }
 
 
