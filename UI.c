@@ -42,7 +42,8 @@ void User_Intr(void)
 	do{
 		printf("Please select the strategy for Player 1 from 0 - 4: ");
 		selectStrat = getch();
-		selectStrat -= '0';
+		if(isdigit(selectStrat))
+			selectStrat -= '0';
 
 	} while (selectStrat < 0 || selectStrat > 4);
 	
@@ -57,7 +58,8 @@ void User_Intr(void)
 	do{
 		printf("Please select the strategy for Player 2 from 0 - 4: ");
 		selectStrat = getch();
-		selectStrat -= '0';
+		if(isdigit(selectStrat))
+			selectStrat -= '0';
 
 	} while (selectStrat < 0 || selectStrat > 4);
 
