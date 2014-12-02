@@ -40,7 +40,7 @@ void User_Intr(void)
 
 	/* Now let user select strategy. This will repeat until a valid strategy is chosen */
 	do{
-		printf("Please select the strategy for Player 1 from 0 - 4: ");
+		printf("\nPlease select the strategy for Player 1 from 0 - 4: ");
 		selectStrat = getch();
 		if(isdigit(selectStrat))
 			selectStrat -= '0';
@@ -56,7 +56,7 @@ void User_Intr(void)
 
 	/* Now let user select strategy. This will repeat until a valid strategy is chosen */
 	do{
-		printf("Please select the strategy for Player 2 from 0 - 4: ");
+		printf("\nPlease select the strategy for Player 2 from 0 - 4: ");
 		selectStrat = getch();
 		if(isdigit(selectStrat))
 			selectStrat -= '0';
