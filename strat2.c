@@ -1,3 +1,5 @@
+// Zach Cross
+
 #include <stdio.h>
 
 #include "gofish.h"
@@ -12,8 +14,20 @@
  */
 int Strategy2(int player)
 {
+	// Variable Declarations
     int card;
-    // ... put code here ...
+    static int last[2] = {MINNUMB};
+    int loop_ctr = last[player];
 
+    // starting at MINNUMB, sequentially go through entire hand
+    for (loop_ctr = last[player]; loop_ctr <= MAXNUMB; loop_ctr ++)
+    {
+    	// stop iterating and return card to ask for if none already found in hand
+    	if (TotalNumberOfCards(player, loop_ctr) > 0)
+    	{
+    		break;
+    	}
+    }
+    
     return(card);
 }
