@@ -28,7 +28,7 @@ int Strategy4(int player)
 			//picking a random card
 			card = (rand() % MAXNUMB) + MINNUMB;
 			//making sure it hasn't been looked for before
-		} while (check[card-1] != 1);
+		} while (check[card-1] == 1);
 		
 		//seeing if there is only one of the card
 		if (TotalNumberOfCards(player, card) == 1)
