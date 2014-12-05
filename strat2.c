@@ -15,16 +15,18 @@
 int Strategy2(int player)
 {
 	// Variable Declarations
-    int card;
-    static int last[2] = {MINNUMB};
-    int loop_ctr = last[player];
+    int card 		= 1;		// If all else fails, we'll draw an ace...
+    static int last[2] 	= {MINNUMB};
+    int loop_ctr 	= last[player];
 
     // starting at MINNUMB, sequentially go through entire hand
     for (loop_ctr = last[player]; loop_ctr <= MAXNUMB; loop_ctr ++)
     {
     	// stop iterating and return card to ask for if none already found in hand
-    	if (TotalNumberOfCards(player, loop_ctr) > 0)
+    	if (TotalNumberOfCards(player, loop_ctr) <= 0)
     	{
+    		card = loop_ctr;
+    		last[player] = loop_ctr;
     		break;
     	}
     }
