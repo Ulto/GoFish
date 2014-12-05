@@ -20,15 +20,15 @@ int Strategy2(int player)
     int loop_ctr 	= last[player];
 
     // starting at MINNUMB, sequentially go through entire hand
-    for (loop_ctr = last[player]; loop_ctr <= MAXNUMB; loop_ctr ++)
+    while(1)
     {
-    	if (loop_ctr >= MAXNUMB)
+    	loop_ctr ++;
+    	if (loop_ctr > MAXNUMB)
     	{
-    		card = 1;
+    		loop_ctr = MINNUMB;
     	}
-    	
-    	// stop iterating and return card to ask for if none already found in hand
-    	if (TotalNumberOfCards(player, loop_ctr) <= 0)
+    		
+    	if (TotalNumberOfCards(player, loop_ctr) > 0)
     	{
     		card = loop_ctr;
     		last[player] = loop_ctr;
