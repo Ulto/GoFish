@@ -16,7 +16,7 @@ int Strategy2(int player)
 {
 	// Variable Declarations
     int card 		= 1;		// If all else fails, we'll draw an ace...
-    static int last[2] 	= {MINNUMB};
+    static int last[2] 	= {MINNUMB, MINNUMB};
     int loop_ctr 	= last[player];
 
     // starting at MINNUMB, sequentially go through entire hand
