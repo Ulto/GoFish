@@ -12,7 +12,7 @@
 // Runs every possible combination of strategies a number of times to
 // make sure the game does not crash.
 
-// Step through each strategy (0-4)
+// Step through each strategy (0-6)
 // Skip over strategy 1 (all others can be automated)
 // Run each one "TRIAL_TIMES" and keep records of win-loses
 // Display the results
@@ -41,14 +41,10 @@ void testGame(void)
 	int strategies[NUM_STRATEGIES] = { 0, 2, 3, 4, 5, 6};
 
 	/*Create array for win, lose,and overall count*/
-	int wins[NUM_STRATEGIES];
-	int loses[NUM_STRATEGIES];
-	int overall[NUM_STRATEGIES];
+	int wins[NUM_STRATEGIES] = { 0,0,0,0,0,0};
+	int loses[NUM_STRATEGIES] = { 0,0,0,0,0,0};
+	int overall[NUM_STRATEGIES] = { 0,0,0,0,0,0};
 
-	/*Reset arrays*/
-	memset(wins, 0, NUM_STRATEGIES);
-	memset(loses, 0, NUM_STRATEGIES);
-	memset(overall, 0, NUM_STRATEGIES);
 
 	/*For twenty five random decks*/
 	for (randindex = 0; randindex < TRIAL_TIMES; randindex++)
